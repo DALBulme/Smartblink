@@ -1,3 +1,5 @@
+# Lozsa D - Abgabe
+
 # Programmieraufgabe Smartblink
 
 Basierend auf der vorliegenden Qt-Oberfläche soll ein Programm erstellt werden, das die LEDs des
