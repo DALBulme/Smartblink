@@ -1,7 +1,9 @@
 #ifndef GUI_H
 #define GUI_H
-
+#include <QWidget>
 #include "ui_gui.h"
+#include "gpio.h"
+#include <QTimer>
 
 class Gui : public QWidget, private Ui::Gui
 {
@@ -9,10 +11,19 @@ class Gui : public QWidget, private Ui::Gui
 
 public:
     explicit Gui(QWidget *parent = nullptr);
-private slots:
+
+private slots:                                            //Funktionen definieren
     void on_speedSlider_valueChanged(int value);
     void on_blinkButton_clicked();
     void on_lauflichtButton_clicked();
+    void toggle();
+
+private:
+    QTimer* m_timer;
+    bool m_state = 0;
+    bool m_lauflicht = 1;
+    unsigned int count = 1;
+    Gpio* m_leds;
 };
 
 #endif // GUI_H
